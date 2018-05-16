@@ -12,7 +12,7 @@
     <!-- AdminLTE App -->
     <script src="../public/js/app.min.js"></script>
     <!-- js para login -->
-    <script src="../public/js/login.js"></script>    
+    <!-- <script src="../public/js/login.js"></script>     -->
     
     <!-- DATATABLES -->
     <script   src="../public/datatables/jquery.dataTables.min.js" ></script>

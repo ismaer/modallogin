@@ -4,7 +4,7 @@
 define("DB_HOST", "localhost");
 
 //Nombre de la base de datos
-define("DB_NAME", "dbpruebaing");
+define("DB_NAME", "dbmodallogin");
 
 //Usuario de la base de datos
 define("DB_USERNAME", "usrdbprueba2");

@@ -35,7 +35,8 @@ require 'header.php';
                                 <span id="text-login-msg">Ingrese su nombre de usuario y contraseña.</span>
                             </div>
 				    		<input id="login_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
-				    		<input id="login_password" class="form-control" type="password" placeholder="Password" required>
+
+				    		<input id="login_password" class="form-control" type="password" placeholder="Password" required autocomplete="new-password">
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox"> Recordarme
@@ -47,8 +48,8 @@ require 'header.php';
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">Iniciar sesion</button>
                             </div>
 				    	    <div>
-                                <button id="login_lost_btn" type="button" class="btn btn-link">Olvidé mi contraseña?</button>
-                                <button id="login_register_btn" type="button" class="btn btn-link">Registrarme</button>
+                                <button id="login_lost_btn" type="button" class="btn btn-link" >Olvidé mi contraseña?</button>
+                                <button id="login_register_btn" type="button" class="btn btn-link" >Registrarme</button>
                             </div>
 				        </div>
                     </form>
@@ -61,15 +62,15 @@ require 'header.php';
                                 <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
                                 <span id="text-lost-msg">Ingrese su email.</span>
                             </div>
-		    				<input id="lost_email" class="form-control" type="text" placeholder="E-Mail (type ERROR for error effect)" required>
+		    				<input id="lost_email" class="form-control" type="email" placeholder="E-Mail" required>
             			</div>
 		    		    <div class="modal-footer">
                             <div>
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
                             </div>
                             <div>
-                                <button id="lost_login_btn" type="button" class="btn btn-link">Iniciar sesión</button>
-                                <button id="lost_register_btn" type="button" class="btn btn-link">Registrarme</button>
+                                <button id="lost_login_btn" type="button" class="btn btn-link" >Iniciar sesión</button>
+                                <button id="lost_register_btn" type="button" class="btn btn-link" >Registrarme</button>
                             </div>
 		    		    </div>
                     </form>
@@ -82,17 +83,18 @@ require 'header.php';
                                 <div id="icon-register-msg" class="glyphicon glyphicon-chevron-right"></div>
                                 <span id="text-register-msg">Registrar una cuenta.</span>
                             </div>
-		    				<input id="register_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
-                            <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
-                            <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+		    				<input id="register_username" name="register_username" class="form-control" type="text" placeholder="Username" required >
+                            <input id="register_lastname" name="register_lastname" class="form-control" type="text" placeholder="Lastname" required>
+                            <input id="register_email" name="register_email" class="form-control" type="email" placeholder="E-Mail" required>
+                            <input id="register_password" name="register_password" class="form-control" type="password" placeholder="Password" autocomplete="new-password">
             			</div>
 		    		    <div class="modal-footer">
                             <div>
                                 <button type="submit" class="btn btn-primary btn-lg btn-block">Registrarme</button>
                             </div>
                             <div>
-                                <button id="register_login_btn" type="button" class="btn btn-link">Iniciar sesión</button>
-                                <button id="register_lost_btn" type="button" class="btn btn-link">Olvidé mi contraseña?</button>
+                                <button id="register_login_btn" type="button" class="btn btn-link" >Iniciar sesión</button>
+                                <button id="register_lost_btn" type="button" class="btn btn-link" >Olvidé mi contraseña?</button>
                             </div>
 		    		    </div>
                     </form>
@@ -109,3 +111,5 @@ require 'header.php';
 <?php
 require 'footer.php';
 ?>
+
+<script type="text/javascript" src="scripts/login.js"> </script>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    console.log("aca vamos1");
+    
     var $formLogin = $('#login-form');
     var $formLost = $('#lost-form');
     var $formRegister = $('#register-form');
@@ -9,12 +9,13 @@ $(document).ready(function() {
     var $msgShowTime = 2000;
 
     $("form").submit(function () {
-    console.log("aca vamos2");            
+                
         switch(this.id) {
             case "login-form":
                 var $lg_username=$('#login_username').val();
                 var $lg_password=$('#login_password').val();
                 if ($lg_username == "ERROR") {
+                    console.log("aca vamos2");
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
                 } else {
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
@@ -46,7 +47,7 @@ $(document).ready(function() {
         }
         return false;
     });
-    console.log("aca vamos3");
+   
     $('#login_register_btn').click( function () { modalAnimate($formLogin, $formRegister) });
     $('#register_login_btn').click( function () { modalAnimate($formRegister, $formLogin); });
     $('#login_lost_btn').click( function () { modalAnimate($formLogin, $formLost); });
@@ -55,7 +56,7 @@ $(document).ready(function() {
     $('#register_lost_btn').click( function () { modalAnimate($formRegister, $formLost); });
     
     function modalAnimate ($oldForm, $newForm) {
-        console.log("aca vamos4");
+        
         var $oldH = $oldForm.height();
         var $newH = $newForm.height();
         $divForms.css("height",$oldH);
