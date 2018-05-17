@@ -15,7 +15,7 @@ Class Login
 	public function inserusr($nombres, $apellidos, $correo, $clave)
 	{
 		$sql = "INSERT INTO usuarios (nombres, apellidos, correo, clave)
-		VALUES ('$nombres', '$apellidos', '$correo', MD5('$clave'))";
+		VALUES ('$nombres', '$apellidos', '$correo', MD5($clave))";
 		return ejecutarConsulta($sql);
 	}
 
@@ -28,11 +28,21 @@ Class Login
 	}
 
 	//Implementamos un método para desactivar categorias
-	public function desactivar($idcategoria)
+	public function actclave($lost_email)
 	{
-		$sql = "UPDATE categoria SET condicion='0'
-		WHERE idcategoria='$idcategoria'";
+		$sql = "SELECT nombres FROM usuarios
+		WHERE correo='$lost_email'";
+		return ejecutarConsultaSimpleFila($sql);
+	}
+
+	public function insercod($lost_email, $codigo){
+		$sql = "INSERT INTO recordarcod (email, codigo) VALUES ('$lost_email', '$codigo')";
 		return ejecutarConsulta($sql);
+	}
+	public function validarusr($login_username, $login_password){
+		$sql = "SELECT apellidos FROM usuarios
+		WHERE nombres='$login_username'  and  clave='$login_password' "; 
+		return ejecutarConsultaSimpleFila($sql);
 	}
 
 	//Implementamos un método para activar categorias
@@ -57,7 +67,8 @@ Class Login
 		$sql = "SELECT * FROM categoria";
 		return ejecutarConsulta($sql);
 	}
-
 }
+
+
 
 ?>

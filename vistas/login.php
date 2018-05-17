@@ -34,9 +34,9 @@ require 'header.php';
                                 <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
                                 <span id="text-login-msg">Ingrese su nombre de usuario y contraseña.</span>
                             </div>
-				    		<input id="login_username" class="form-control" type="text" placeholder="Username (type ERROR for error effect)" required>
+				    		<input id="login_username" name="login_username" class="form-control" type="text" placeholder="Username" required>
 
-				    		<input id="login_password" class="form-control" type="password" placeholder="Password" required autocomplete="new-password">
+				    		<input id="login_password" name="login_password" class="form-control" type="password" placeholder="Password" required autocomplete="new-password">
                             <div class="checkbox">
                                 <label>
                                     <input type="checkbox"> Recordarme
@@ -62,7 +62,7 @@ require 'header.php';
                                 <div id="icon-lost-msg" class="glyphicon glyphicon-chevron-right"></div>
                                 <span id="text-lost-msg">Ingrese su email.</span>
                             </div>
-		    				<input id="lost_email" class="form-control" type="email" placeholder="E-Mail" required>
+		    				<input id="lost_email" name="lost_email" class="form-control" type="email" placeholder="E-Mail" required>
             			</div>
 		    		    <div class="modal-footer">
                             <div>

@@ -1,5 +1,3 @@
-
-
 $(function() {
     limpiar();
     var $formLogin = $('#login-form');
@@ -18,6 +16,8 @@ $(function() {
                 if ($lg_username == "ERROR") {
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "glyphicon-remove", "Login error");
                 } else {
+
+                    validarusr($formLogin);
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "glyphicon-ok", "Login OK");
                 }
                 return false;
@@ -28,6 +28,7 @@ $(function() {
                     msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "error", "glyphicon-remove", "Send error");
                 } else {
 
+                    actclave($formLost);
                     msgChange($('#div-lost-msg'), $('#icon-lost-msg'), $('#text-lost-msg'), "success", "glyphicon-ok", "Send OK");
                 }
                 return false;
@@ -39,8 +40,7 @@ $(function() {
                 if ($rg_username == "ERROR") {
                     msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "error", "glyphicon-remove", "Register error");
                 } else {
-                    var $formreg = $("#register-form");
-                    inserusr($formreg);
+                    inserusr($formRegister);
                     msgChange($('#div-register-msg'), $('#icon-register-msg'), $('#text-register-msg'), "success", "glyphicon-ok", "Register OK");
                 }
                 return false;
@@ -67,6 +67,50 @@ $(function() {
     $.ajax({
 
         url: "../ajax/login.php?op=inserusr",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+
+        success: function(datos)
+        {
+            bootbox.alert(datos);
+            //mostrarform(false);
+            //tabla.ajax.reload();
+        }
+    });
+    limpiar();
+    }
+
+    function actclave($formLost) {
+    //e.preventDefault(); //No se activará la accion predeterminada del evento
+    //$("#btnGuardar").prop("disabled",true);
+    var formData = new FormData($formLost[0]);
+    $.ajax({
+
+        url: "../ajax/login.php?op=actclave",
+        type: "POST",
+        data: formData,
+        contentType: false,
+        processData: false,
+
+        success: function(datos)
+        {
+            bootbox.alert(datos);
+            //mostrarform(false);
+            //tabla.ajax.reload();
+        }
+    });
+    limpiar();
+    }
+
+    function validarusr($formLogin) {
+    //e.preventDefault(); //No se activará la accion predeterminada del evento
+    //$("#btnGuardar").prop("disabled",true);
+    var formData = new FormData($formLogin[0]);
+    $.ajax({
+
+        url: "../ajax/login.php?op=validarusr",
         type: "POST",
         data: formData,
         contentType: false,
