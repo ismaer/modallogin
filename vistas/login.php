@@ -34,7 +34,7 @@ require 'header.php';
                                 <div id="icon-login-msg" class="glyphicon glyphicon-chevron-right"></div>
                                 <span id="text-login-msg">Ingrese su nombre de usuario y contraseña.</span>
                             </div>
-				    		<input id="login_username" name="login_username" class="form-control" type="text" placeholder="Username" required>
+				    		<input id="login_username" name="login_username" class="form-control" type="text" placeholder="correo" required>
 
 				    		<input id="login_password" name="login_password" class="form-control" type="password" placeholder="Password" required autocomplete="new-password">
                             <div class="checkbox">

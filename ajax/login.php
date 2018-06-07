@@ -48,7 +48,7 @@ switch ($_GET["op"]){
 	case 'validarusr':
 		$rspta=$login->validarusr($login_username, MD5($login_password));
 		
-		echo $rspta ? "Usuario registrado": "usuario no registrado";
+		echo $rspta ? "Usuario validado": "usuario no registrado";
 	break;
 		
 	case 'listar':

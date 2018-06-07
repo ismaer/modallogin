@@ -41,7 +41,7 @@ Class Login
 	}
 	public function validarusr($login_username, $login_password){
 		$sql = "SELECT apellidos FROM usuarios
-		WHERE nombres='$login_username'  and  clave='$login_password' "; 
+		WHERE correo='$login_username'  and  clave='$login_password' "; 
 		return ejecutarConsultaSimpleFila($sql);
 	}
 
